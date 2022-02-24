@@ -4,3 +4,4 @@ local include, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 
 include("paper")
+include("paper_fire")

@@ -4,7 +4,6 @@ local minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 local nodepref = "nc_writing:glyph"
-local rush = "nc_flora:rush_dry"
 
 minetest.register_craftitem(modname .. ":paper", {
     description = "Paper",
@@ -28,11 +27,11 @@ nodecore.register_craft({
     label = "paper",
     action = "pummel",
     toolgroups = {cracky = 1},
-    indexkeys = { rush },
+    indexkeys = { "nc_flora:rush_dry" },
     nodes = { 
-        { match = rush, replace = "air" },
-        { x = -1, match = rush, replace = "air" },
-        { x = 1, match = rush, replace = "air" }
+        { match = "nc_flora:rush_dry", replace = "air" },
+        { x = -1, match = "nc_flora:rush_dry", replace = "air" },
+        { x = 1, match = "nc_flora:rush_dry", replace = "air" }
      },
      items = { 
          { name = modname .. ":paper" }
@@ -66,9 +65,9 @@ nodecore.register_craft({
     nodes = { 
         -- "group:alpha_glyph"
         { match = modname .. ":paper", replace = "air" },
-         { x = 1, match = "nc_writing:glyph1", replace = "air" },
-         { z = -1, match = "nc_writing:glyph2", replace = "air" },
-         { x = -1, match = "nc_writing:glyph3", replace = "air" }
+         { x = 1, match = nodepref .. "1", replace = "air" },
+         { z = -1, match = nodepref .. "2", replace = "air" },
+         { x = -1, match = nodepref .. "3", replace = "air" }
      },
      items = { 
          { name = modname .. ":paper_fire" }
