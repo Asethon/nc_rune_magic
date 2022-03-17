@@ -69,12 +69,12 @@ function fire_on_pos(pos, fire)
     end
 end
 
-nodecore.register_on_punchnode("charcoal writing check", function(pos, node, puncher, pointed)
+nodecore.register_on_punchnode("use fire paper", function(pos, node, puncher, pointed)
     if (not puncher) or (not puncher:is_player()) then return end
     local wield = puncher:get_wielded_item()
 	if wield:get_name() ~= paper_fire then return end
     local anode = pointed.above
 
-    local fire = { { 0, 1, 0 }, { 1, 0, 1 } }
+    local fire = { { 0, 1, 0 }, { 1, 0, 1 }, { 0, 1, 0} }
     fire_on_pos(pos, fire)
 end)
